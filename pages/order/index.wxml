@@ -1,0 +1,16 @@
+<Tabs tabs="{{tabs}}" bind:handChildEve="parenHandChildEve">
+    <view wx:for="{{orderss}}"  class="order_info">
+            <view class="order_list_item">
+                <view>订单编号</view>
+                <view>{{item.id}}</view>
+            </view>
+            <view class="order_list_item">
+                <view>订单价格</view>
+                <view>￥{{item.money}}</view>
+            </view>
+            <view class="order_list_item">
+                <view>订单日期</view>
+                <view>￥{{item.day}}</view>
+            </view>
+        </view>
+</Tabs>

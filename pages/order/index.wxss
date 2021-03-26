@@ -1,0 +1,8 @@
+.order_info {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.order_info .order_list_item {
+  display: flex;
+  justify-content: space-between;
+}

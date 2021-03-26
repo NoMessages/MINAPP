@@ -1,0 +1,52 @@
+.collect_main{
+        .collect_tip{
+            margin-top: 25rpx;
+            background-color: #f2f3f6;
+            display: flex;
+            padding: 20rpx;
+            .collect_tip_text{
+                padding: 10rpx 15rpx;
+                border: 1rpx solid #eee;
+                margin-left: 15rpx;
+                background-color: #fffffc;
+            }
+            .active{
+                color: var(--themeColor);
+                border-color: currentColor;
+            }
+        }
+        .collect_shops{
+            .goods_item{
+                display: flex;
+                .goods_img_wrap{
+                    flex: 2;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    image{
+                        width: 70%;
+                    }
+                    
+                }
+                .goods_info_wrap{
+                    flex: 3;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    .goods_name{
+                        display: -webkit-box;
+                        overflow: hidden;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+            
+                    }
+                    .goods_price{
+                        color:var(--themeColor);
+                    font-size: 30rpx;
+                    }
+                }
+            }
+        }
+}
+
+

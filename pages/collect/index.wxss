@@ -1,0 +1,44 @@
+.collect_main .collect_tip {
+  margin-top: 25rpx;
+  background-color: #f2f3f6;
+  display: flex;
+  padding: 20rpx;
+}
+.collect_main .collect_tip .collect_tip_text {
+  padding: 10rpx 15rpx;
+  border: 1rpx solid #eee;
+  margin-left: 15rpx;
+  background-color: #fffffc;
+}
+.collect_main .collect_tip .active {
+  color: var(--themeColor);
+  border-color: currentColor;
+}
+.collect_main .collect_shops .goods_item {
+  display: flex;
+}
+.collect_main .collect_shops .goods_item .goods_img_wrap {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.collect_main .collect_shops .goods_item .goods_img_wrap image {
+  width: 70%;
+}
+.collect_main .collect_shops .goods_item .goods_info_wrap {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.collect_main .collect_shops .goods_item .goods_info_wrap .goods_name {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.collect_main .collect_shops .goods_item .goods_info_wrap .goods_price {
+  color: var(--themeColor);
+  font-size: 30rpx;
+}

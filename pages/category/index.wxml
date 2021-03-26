@@ -1,0 +1,69 @@
+<view class="cates">
+<!--  搜索框 -->
+<SearchInput></SearchInput>
+
+<view class="cates_container">
+
+<!-- 左侧菜单 -->
+
+<scroll-view scroll-y="{{true}}" class="left_menu">
+        <view class="menu_item {{index===currentIndex?'activiy':''}}"
+        wx:for="{{leftListMenu}}"
+        wx:key="*this"
+        bindtap="leftMenuItemChoice"
+        data-index="{{index}}"
+        >   
+        {{item}}
+        </view>
+</scroll-view>
+
+<!-- 右侧菜单 -->
+
+
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="{{true}}" class="right_menu">
+
+    <view class="goods_group"
+    wx:for="{{rightListMenu}}"
+    wx:key="cat_id"
+    wx:for-item="gr_itm"
+    wx:for-index="gr_index"
+    >
+    <!-- 标题 -->
+        <view class="goods_title">
+        <text class="deteminal">/</text>
+        <text class="title"> {{gr_itm.cat_name}}</text>
+        <text class="deteminal">/</text>
+        
+        
+        </view>
+        <!-- 内容 -->
+        <view class="goods_list">
+        <navigator    
+         wx:for="{{gr_itm.children}}"
+            wx:for-item="ch_itm"
+            wx:for-index="ch_index"
+            wx:key="cat_id"
+            url="/pages/goods_list/index?cid={{ch_itm.cat_id}}"
+            >
+                    <!-- 图片 -->
+        <image src="{{ch_itm.cat_icon}}"  mode="widthFix"/>
+
+        <!-- 文字 -->
+        <view class="goods_name">{{ch_itm.cat_name}}</view>
+            </navigator>
+
+        </view>
+
+
+
+    
+    </view>
+
+</scroll-view>
+
+</view>
+
+
+
+
+</view>

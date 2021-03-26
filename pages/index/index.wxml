@@ -1,0 +1,42 @@
+<view class="pyg_index">
+        <SearchInput></SearchInput>
+        <!-- 轮播图开始 -->
+        <view class="index_swiper">
+                <swiper autoplay="{{true}}" indicator-dots="{{true}}" circular="{{true}}" duration="1000" interval="3000">
+                        <swiper-item wx:for="{{swiperList}}" wx:key="{{goods_id}}">
+                                <navigator url="/pages/goos_detail/index?goods_id={{item.goods_id}}">
+                                        <image src="{{item.image_src}}" mode="widthFix" />
+                                </navigator>
+                        </swiper-item>
+                </swiper>
+                <!-- 轮播图结束 -->
+                <!-- 导航栏开始 -->
+                <view class="index_cate">
+                        <navigator wx:for="{{cateList}}" wx:key="name"
+                                url="/pages/category/index"
+                                open-type="switchTab"
+                        >
+                                <image src="{{item.image_src}}" mode="widthFix" />
+                        </navigator>
+                </view>
+                <!-- 导航栏结束 -->
+                <!-- 楼层开始 -->
+                <view class="index_floor">
+                        <!-- 每一层楼 -->
+                        <view class="floor_group" wx:for="{{floorList}}" wx:for-item="gr_item" wx:for-index="gr_index" wx:key="name">
+                                <!-- 标题 -->
+                                <view class="floor_title">
+                                        <image src="{{gr_item.floor_title.image_src}}" mode="widthFix" />
+                                </view>
+                                <!-- 内容 -->
+                                <view class="floor_list">
+                                        <navigator wx:for="{{gr_item.product_list}}" wx:for-item="list_item" wx:for-index="list_index" wx:key="name" url="{{list_item.navigator_url}}" >
+                                                
+                                                <image src="{{list_item.image_src}}" mode="{{list_index===0?'widthFix':'scallToFill'}}" />
+                                        </navigator>
+                                </view>
+                        </view>
+                </view>
+                <!-- 楼层结束 -->
+        </view>
+</view>

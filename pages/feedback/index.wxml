@@ -1,0 +1,35 @@
+<Tabs tabs="{{tabs}}" bind:handChildEve="parenHandChildEve">
+    <view class="fb_main">
+        <!-- 标题 -->
+        <view class="fb_title">问题的种类</view>
+        <!-- 小功能tip -->
+        <view class="fb_tips">
+            <text>功能建议</text>
+            <text>购买遇到问题</text>
+            <text>性能问题</text>
+            <text>其他</text>
+        </view>
+        <!-- 大盒子 -->
+        <view class="fb_content">
+            <textarea value="{{textVal}}" bindinput="handBindInputEve" placeholder="请描述一下您的问题"></textarea>
+            <view class="fb_tool">
+                <button bindtap="handChooseImg">+</button>
+                <view class="up_img_wrap"
+                wx:for="{{imageSource}}"
+                wx:key="*this"
+                bindtap="handleRemoveImg"
+                data-index="{{index}}"
+                >
+                    <UpImg src="{{item}}"></UpImg>
+                </view>
+            </view>
+        </view>
+        <!-- 底部提交按钮 -->
+        <view class="form_btn_wrap">
+            <button type="warn" bindtap="handleAddMessage">
+                <icon class="" type="success_no_circle" size="23" color="white"></icon>
+                提交
+            </button>
+        </view>
+    </view>
+</Tabs>

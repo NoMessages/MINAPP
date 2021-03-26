@@ -1,0 +1,25 @@
+<!-- 父组件传递数据到子组件 -->
+<Tabs tabs="{{tabs}}" bind:handChildEve="parenHandChildEve">
+   <view class="collect_main">
+      <view class="collect_tip">
+         <text class="collect_tip_text active">全部</text>
+         <text class="collect_tip_text">正在热卖</text>
+         <text class="collect_tip_text">即将上线</text>
+      </view>
+      <view class="collect_shops">
+         <navigator class="goods_item" wx:for="{{collect}}" wx:key="goods_id" url="/pages/goos_detail/index?goods_id={{item.goods_id}}">
+            <view class="goods_img_wrap">
+               <!-- 图片 -->
+               <image src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" mode="widthFix" />
+            </view>
+            <!-- 右边的商品容器 -->
+            <view class="goods_info_wrap">
+               <!-- 名称 -->
+               <view class="goods_name">{{item.goods_name}}</view>
+               <view class="goods_price">${{item.goods_price}}</view>
+               <!-- 价格 -->
+            </view>
+         </navigator>
+      </view>
+   </view>
+</Tabs>
